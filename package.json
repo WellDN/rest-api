@@ -1,0 +1,51 @@
+{
+  "name": "rest-api",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^18.10.0"
+  },
+  "scripts": {
+    "build": "npm-run-all clean tsc",
+    "clean": "rimraf dist",
+    "format": "npm run -- prettier --write",
+    "lint": "eslint --ext js,jsx,ts,tsx .",
+    "nodemon": "nodemon --watch dist",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{css,html,js,jsx,json,ts,tsx,md,mdx,yml,yaml}\"",
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
+    "test": "npm-run-all lint test:format",
+    "test:format": "npm run -- prettier --check",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/express-serve-static-core": "^4.17.31",
+    "@types/sqlite3": "^3.1.8",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "source-map-support": "^0.5.16",
+    "sqlite3": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "prettier": "1.19.1",
+    "rimraf": "^3.0.2",
+    "typescript": "~3.8.3"
+  },
+  "prettier": {
+    "trailingComma": "all"
+  }
+}
